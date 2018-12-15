@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorSecondaryExtraLight"
+    tools:context=".ui.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/home_title_LinearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/home_title_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="@font/abel_regular"
+            android:text="@string/app_name"
+            android:textColor="@color/colorPrimaryExtraDark"
+            android:textSize="32sp" />
+
+        <ImageView
+            android:id="@+id/home_logo_ImageView"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginLeft="8dp"
+            android:contentDescription="@string/app_name" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/home_quote_TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/colorPrimaryExtraDark"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_title_LinearLayout" />
+
+    <LinearLayout
+        android:id="@+id/home_image_LinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp"
+        android:background="@drawable/rounded_rectangle_background"
+        android:orientation="vertical"
+        android:paddingTop="16dp"
+        android:paddingBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/home_line_top"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_quote_TextView">
+
+
+        <ImageView
+            android:id="@+id/home_icon_ImageView"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_gravity="center"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/home_count_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/colorPrimaryExtraDark"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/home_line_top"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginRight="36dp"
+        android:background="@color/colorPrimaryExtraDark"
+        app:layout_constraintBottom_toTopOf="@id/home_view_recipe_Button"
+        app:layout_constraintTop_toBottomOf="@id/home_image_LinearLayout" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryExtraDark"
+        app:layout_constraintBottom_toBottomOf="@id/home_view_recipe_Button"
+        app:layout_constraintRight_toLeftOf="@id/home_view_recipe_Button"
+        app:layout_constraintTop_toTopOf="@id/home_view_recipe_Button" />
+
+    <Button
+        android:id="@+id/home_view_recipe_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/normal_button_dark_selector"
+        android:fontFamily="@font/montserrat_medium"
+        android:onClick="startListRecipesActivity"
+        android:text="@string/home_view_recipes"
+        android:textColor="@drawable/normal_button_text_selector"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/home_add_recipe_Button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_line_top" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryExtraDark"
+        app:layout_constraintBottom_toBottomOf="@id/home_view_recipe_Button"
+        app:layout_constraintLeft_toRightOf="@id/home_view_recipe_Button"
+        app:layout_constraintTop_toTopOf="@id/home_view_recipe_Button" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryExtraDark"
+        app:layout_constraintBottom_toBottomOf="@id/home_add_recipe_Button"
+        app:layout_constraintRight_toLeftOf="@id/home_add_recipe_Button"
+        app:layout_constraintTop_toTopOf="@id/home_add_recipe_Button" />
+
+    <Button
+        android:id="@+id/home_add_recipe_Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/normal_button_dark_selector"
+        android:fontFamily="@font/montserrat_medium"
+        android:onClick="startAddRecipeActivity"
+        android:text="@string/home_add_recipe"
+        android:textColor="@drawable/normal_button_text_selector"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/button3"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_view_recipe_Button" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryExtraDark"
+        app:layout_constraintBottom_toBottomOf="@id/home_add_recipe_Button"
+        app:layout_constraintLeft_toRightOf="@id/home_add_recipe_Button"
+        app:layout_constraintTop_toTopOf="@id/home_add_recipe_Button" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@drawable/normal_button_dark_selector"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/settings"
+        android:textColor="@drawable/normal_button_text_selector"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toTopOf="@id/button4"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_add_recipe_Button" />
+
+    <Button
+        android:id="@+id/button4"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:background="@color/colorPrimaryExtraLight"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="Another one"
+        android:textColor="@drawable/normal_button_text_selector"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button3" />
+
+
+</android.support.constraint.ConstraintLayout>

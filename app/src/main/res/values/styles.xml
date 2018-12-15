@@ -1,0 +1,21 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryExtraDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
+        <item name="colorAccent">@color/colorSecondary</item>
+        <item name="android:colorBackground">@color/colorSecondaryExtraLight</item>
+
+    </style>
+
+    <style name="AppTheme.Launcher">
+        <item name="android:windowBackground">@drawable/launch_screen</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="android:colorBackground">@color/colorSecondaryExtraLight</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
+    </style>
+
+</resources>

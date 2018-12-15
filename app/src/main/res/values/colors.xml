@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#4caf50</color>
+    <color name="colorPrimaryExtraDark">#004d40</color> <!--<004d40  003300  1b5e20  004a00 -->
+    <color name="colorPrimaryLight">#4CAF50</color>
+    <color name="colorPrimaryExtraLight">#c8e6c9</color> <!-- cdf7ca  c8e6c9 -->
+    <color name="colorSecondary">#FD5523</color>
+    <color name="colorSecondaryExtraLight">#FFF8E1</color> <!-- b2dfdb FFF8E1 -->
+</resources>
+

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Pocket Chef</string>
+    <string name="home_view_recipes">View Recipes</string>
+    <string name="home_add_recipe">Add Recipe</string>
+    <string name="settings">Settings</string>
+
+    <string-array name="quotes">
+        <item>\"Food is the ingredient that binds us together\"</item>
+        <item>\"First we eat, then we do everything else\"</item>
+    </string-array>
+</resources>
