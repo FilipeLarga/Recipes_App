@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/categories_cardview"
+    android:layout_width="168dp"
+    android:layout_height="82dp"
+    android:layout_margin="16dp"
+    android:background="@color/colorPrimaryExtraLight"
+    android:clickable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardCornerRadius="12dp"
+    app:layout_constraintLeft_toLeftOf="parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/cardview_title_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginRight="12dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Favorites"
+            android:textColor="@color/colorSecondary"
+            android:textSize="17sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/cardview_icon_imageview"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/cardview_icon_imageview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="12dp"
+            android:src="@drawable/category_icon_favorite_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cardview_recipe_count_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/abel_regular"
+            android:text="5 recipes"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toTopOf="@id/cardview_favorite_count_textview"
+            app:layout_constraintLeft_toLeftOf="@id/cardview_title_textview" />
+
+        <TextView
+            android:id="@+id/cardview_favorite_count_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="@font/abel_regular"
+            android:text="3 favorites"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/cardview_recipe_count_textview" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

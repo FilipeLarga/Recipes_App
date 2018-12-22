@@ -15,12 +15,13 @@ public class RecipeEntity {
     public String categoryOne;
     public String categoryTwo;
     public String categoryThree;
+    public boolean favorite;
     public int duration;
     public List<String> directions;
     public int difficulty;
     public int servings;
 
-    public RecipeEntity(String RecipeName, String categoryOne, String categoryTwo, String categoryThree, int duration, List<String> directions, int difficulty, int servings) {
+    public RecipeEntity(String RecipeName, String categoryOne, String categoryTwo, String categoryThree, boolean favorite, int duration, List<String> directions, int difficulty, int servings) {
         this.RecipeName = RecipeName;
         this.categoryOne = categoryOne;
         this.categoryTwo = categoryTwo;
@@ -29,5 +30,6 @@ public class RecipeEntity {
         this.directions = directions;
         this.difficulty = difficulty;
         this.servings = servings;
+        this.favorite = favorite;
     }
 }

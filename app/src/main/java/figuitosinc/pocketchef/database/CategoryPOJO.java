@@ -4,4 +4,5 @@ public class CategoryPOJO {
     public String categoryOne;
     public String categoryTwo;
     public String categoryThree;
+    public boolean favorite;
 }

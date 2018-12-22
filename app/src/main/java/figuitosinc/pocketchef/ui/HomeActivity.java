@@ -2,6 +2,7 @@ package figuitosinc.pocketchef.ui;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -20,7 +21,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import figuitosinc.pocketchef.Categories;
+import figuitosinc.pocketchef.CategoriesEnum;
 import figuitosinc.pocketchef.R;
 import figuitosinc.pocketchef.database.CategoryPOJO;
 import figuitosinc.pocketchef.database.RecipeViewModel;
@@ -87,7 +88,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private void initializeMap() {
         int x = 0;
-        for (String category : Categories.categories) {
+        for (String category : CategoriesEnum.categories) {
             categoriesMap.put(category, 0);
             System.out.println(x++);
         }
@@ -106,15 +107,15 @@ public class HomeActivity extends AppCompatActivity {
         tv.setVisibility(View.VISIBLE);
 
         if (lastCategory == -1) {
-            lastCategory = new Random().nextInt(Categories.count);
+            lastCategory = new Random().nextInt(CategoriesEnum.count);
         } else {
             lastCategory = lastCategory + 1 + new Random().nextInt(3);
         }
 
-        if (lastCategory >= Categories.count) {
-            lastCategory = lastCategory - Categories.count;
+        if (lastCategory >= CategoriesEnum.count) {
+            lastCategory = lastCategory - CategoriesEnum.count;
         }
-        String category = Categories.categories[lastCategory];
+        String category = CategoriesEnum.categories[lastCategory];
         Glide.with(getApplicationContext()).load(getResources().getIdentifier("category_icon_" + category.toLowerCase(), "drawable", getPackageName())).into(view);
         view.setAnimation(AnimationUtils.loadAnimation(getApplicationContext(), R.anim.right_center_animation));
         String count = "<font color='" + ContextCompat.getColor(getApplicationContext(), R.color.colorSecondary) + "'>" + categoriesMap.get(category) + "</font>";
@@ -146,7 +147,6 @@ public class HomeActivity extends AppCompatActivity {
                 if (list != null) {
                     for (CategoryPOJO category : list) {
                         int previousValue = categoriesMap.get(category.categoryOne);
-                        System.out.print(previousValue);
                         categoriesMap.put(category.categoryOne, previousValue + 1);
                         previousValue = categoriesMap.get(category.categoryTwo);
                         categoriesMap.put(category.categoryTwo, previousValue + 1);
@@ -165,9 +165,9 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void startListRecipesActivity(View view) {
-//        Intent intent = new Intent(this, ListRecipesActivity.class);
-//        handler.removeCallbacksAndMessages(null);
-//        startActivity(intent);
+        Intent intent = new Intent(this, ViewRecipesActivity.class);
+        handler.removeCallbacksAndMessages(null);
+        startActivity(intent);
     }
 
 }

@@ -6,7 +6,7 @@
     <item>
         <bitmap
             android:gravity="center"
-            android:src="@drawable/logo_chef_big" />
+            android:src="@drawable/logo_chef_launch" />
     </item>
 
 </layer-list>
