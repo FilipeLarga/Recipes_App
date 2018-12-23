@@ -20,11 +20,11 @@ public class ViewRecipesActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setDisplayShowTitleEnabled(false);
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.colorSecondary, null), PorterDuff.Mode.SRC_ATOP);
 
         CategoryListFragment categoryListFragment = new CategoryListFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.view_recipes_nestedscrollview, categoryListFragment).commit();
+        System.out.println("Entrei transaction");
 
     }
 

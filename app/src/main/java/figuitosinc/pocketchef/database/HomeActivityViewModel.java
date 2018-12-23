@@ -7,12 +7,12 @@ import android.support.annotation.NonNull;
 
 import java.util.List;
 
-public class RecipeViewModel extends AndroidViewModel {
+public class HomeActivityViewModel extends AndroidViewModel {
 
     private LiveData<List<RecipeEntity>> recipes;
     private RecipeIngredientDatabase db = RecipeIngredientDatabase.getInstance(this.getApplication());
 
-    public RecipeViewModel(@NonNull Application application) {
+    public HomeActivityViewModel(@NonNull Application application) {
         super(application);
     }
 

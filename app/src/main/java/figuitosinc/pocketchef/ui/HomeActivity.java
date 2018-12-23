@@ -24,7 +24,7 @@ import java.util.Random;
 import figuitosinc.pocketchef.CategoriesEnum;
 import figuitosinc.pocketchef.R;
 import figuitosinc.pocketchef.database.CategoryPOJO;
-import figuitosinc.pocketchef.database.RecipeViewModel;
+import figuitosinc.pocketchef.database.HomeActivityViewModel;
 
 
 public class HomeActivity extends AppCompatActivity {
@@ -87,10 +87,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void initializeMap() {
-        int x = 0;
         for (String category : CategoriesEnum.categories) {
             categoriesMap.put(category, 0);
-            System.out.println(x++);
         }
     }
 
@@ -135,8 +133,8 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void setupViewModel() {
-        RecipeViewModel recipeViewModel = ViewModelProviders.of(this).get(RecipeViewModel.class);
-        recipeViewModel.getRecipeCategory().observe(this, new Observer<List<CategoryPOJO>>() {
+        HomeActivityViewModel homeActivityViewModel = ViewModelProviders.of(this).get(HomeActivityViewModel.class);
+        homeActivityViewModel.getRecipeCategory().observe(this, new Observer<List<CategoryPOJO>>() {
             @Override
             public void onChanged(@Nullable List<CategoryPOJO> list) {
 

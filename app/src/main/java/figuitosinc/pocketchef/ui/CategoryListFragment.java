@@ -21,13 +21,14 @@ import figuitosinc.pocketchef.R;
 import figuitosinc.pocketchef.category_recyclerview.Category;
 import figuitosinc.pocketchef.category_recyclerview.CategoryRecyclerViewAdapter;
 import figuitosinc.pocketchef.database.CategoryPOJO;
-import figuitosinc.pocketchef.database.RecipeViewModel;
+import figuitosinc.pocketchef.database.ViewRecipeActivityViewModel;
 
 public class CategoryListFragment extends Fragment {
 
     private List<Category> categories = new ArrayList<>();
     private Map<String, Integer> categoriesCountMap = new HashMap<>();
     private Map<String, Integer> categoriesFavoriteMap = new HashMap<>();
+    private CategoryRecyclerViewAdapter adapter;
 
 
     @Override
@@ -36,15 +37,15 @@ public class CategoryListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_category_list, container, false);
         setupViewModel();
         RecyclerView recyclerView = view.findViewById(R.id.categories_fragment_recyclerView);
-        CategoryRecyclerViewAdapter adapter = new CategoryRecyclerViewAdapter(getContext(), categories);
+        adapter = new CategoryRecyclerViewAdapter(getContext(), categories);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         return view;
     }
 
     private void setupViewModel() {
-        RecipeViewModel recipeViewModel = ViewModelProviders.of(this).get(RecipeViewModel.class);
-        recipeViewModel.getRecipeCategory().observe(this, new Observer<List<CategoryPOJO>>() {
+        ViewRecipeActivityViewModel viewRecipeActivityViewModel = ViewModelProviders.of(this).get(ViewRecipeActivityViewModel.class);
+        viewRecipeActivityViewModel.getRecipeCategory().observe(this, new Observer<List<CategoryPOJO>>() {
             @Override
             public void onChanged(@Nullable List<CategoryPOJO> list) {
 
@@ -52,7 +53,6 @@ public class CategoryListFragment extends Fragment {
                 categoriesCountMap.clear();
                 categoriesFavoriteMap.clear();
                 initializeMaps();
-
                 if (list != null) {
                     for (CategoryPOJO category : list) {
                         int previousValue = categoriesCountMap.get(category.categoryOne);
@@ -76,6 +76,7 @@ public class CategoryListFragment extends Fragment {
                     }
                 }
                 initializeCategoryList();
+                adapter.notifyDataSetChanged();
             }
         });
     }
