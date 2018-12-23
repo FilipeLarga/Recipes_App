@@ -1,27 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ViewRecipesActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/view_recipes_toolbar"
+
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:title="Categories"
-        app:titleTextAppearance="@style/Toolbar.Title"
-        app:titleTextColor="@color/colorPrimaryExtraDark" />
+        android:layout_height="130dp"
+        android:background="@color/colorSecondaryExtraLight"
+        android:fitsSystemWindows="true"
+        android:stateListAnimator="@null">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/view_recipes_collapsingtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:collapsedTitleTextAppearance="@style/Toolbar.TitleCollapsed"
+            app:expandedTitleGravity="bottom|center_horizontal"
+            app:expandedTitleTextAppearance="@style/Toolbar.TitleExpanded"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/view_recipes_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:title="Categories">
+
+            </android.support.v7.widget.Toolbar>
+
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+    </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
         android:id="@+id/view_recipes_nestedscrollview"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_recipes_toolbar">
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
     </android.support.v4.widget.NestedScrollView>
 
-</android.support.constraint.ConstraintLayout>
+</android.support.design.widget.CoordinatorLayout>

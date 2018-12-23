@@ -2,13 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/settings"
+        android:id="@+id/menu_settings"
         android:title="Settings"
+        android:iconTint="@color/colorPrimaryExtraDark"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/search"
-        android:title="Search"
-        app:actionViewClass="android.support.v7.widget.SearchView"
-        app:showAsAction="always" />
+    <!--<item-->
+    <!--android:id="@+id/menu_search"-->
+    <!--android:title="Search"-->
+    <!--android:iconTint="@color/colorPrimaryExtraDark"-->
+    <!--app:actionViewClass="android.support.v7.widget.SearchView"-->
+    <!--app:showAsAction="always|collapseActionView" />-->
 
 </menu>

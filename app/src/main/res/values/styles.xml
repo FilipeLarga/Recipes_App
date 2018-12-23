@@ -15,12 +15,18 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="android:colorBackground">@color/colorSecondaryExtraLight</item>
         <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
+        <item name="android:textColorSecondary">@color/colorPrimaryExtraDark</item>
     </style>
 
-    <style name="Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">23sp</item>
-        <item name="android:fontFamily">@font/abel_regular</item>
-        <item name="android:titleTextColor">@color/colorPrimaryExtraDark</item>
+    <style name="Toolbar.TitleCollapsed" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/colorPrimaryExtraDark</item>
+
+    </style>
+
+    <style name="Toolbar.TitleExpanded" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">42sp</item>
+        <item name="android:textColor">@color/colorSecondary</item>
     </style>
 
 </resources>

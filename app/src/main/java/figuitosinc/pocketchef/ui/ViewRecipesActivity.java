@@ -2,6 +2,8 @@ package figuitosinc.pocketchef.ui;
 
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -18,14 +20,17 @@ public class ViewRecipesActivity extends AppCompatActivity {
 
         Toolbar toolbar = findViewById(R.id.view_recipes_toolbar);
         setSupportActionBar(toolbar);
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.colorSecondary, null), PorterDuff.Mode.SRC_ATOP);
 
+        CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.view_recipes_collapsingtoolbar);
+        collapsingToolbarLayout.setCollapsedTitleTypeface(ResourcesCompat.getFont(getApplicationContext(), R.font.abel_regular));
+        collapsingToolbarLayout.setExpandedTitleTypeface(ResourcesCompat.getFont(getApplicationContext(), R.font.abel_regular));
+
         CategoryListFragment categoryListFragment = new CategoryListFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.view_recipes_nestedscrollview, categoryListFragment).commit();
-        System.out.println("Entrei transaction");
-
     }
 
     @Override
