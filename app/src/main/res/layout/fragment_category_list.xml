@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.CategoryListFragment">
+    <!--app:layout_behavior="@string/appbar_scrolling_view_behavior">-->
 
     <android.support.v7.widget.CardView
         android:id="@+id/categories_fragment_favorites_cardview"
@@ -23,6 +24,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <android.support.constraint.ConstraintLayout
+            android:id="@+id/categories_fragment_favorites_cardview_constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -167,6 +169,14 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="@id/categories_fragment_browse_textview" />
 
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/view_recipes_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@id/categories_fragment_browse_textview" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/categories_fragment_recyclerView"

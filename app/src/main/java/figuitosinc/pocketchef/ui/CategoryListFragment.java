@@ -4,9 +4,14 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
+import android.support.constraint.ConstraintSet;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.TransitionManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,12 +39,44 @@ public class CategoryListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_category_list, container, false);
+        final View view = inflater.inflate(R.layout.fragment_category_list, container, false);
         setupViewModel();
         RecyclerView recyclerView = view.findViewById(R.id.categories_fragment_recyclerView);
         adapter = new CategoryRecyclerViewAdapter(getContext(), categories);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        FloatingActionButton fab = view.findViewById(R.id.view_recipes_fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+//                View inflatedView = getLayoutInflater().inflate(R.layout.cardview_category_big, null);
+//                ConstraintLayout constraintLayoutBig = inflatedView.findViewById(R.id.cardview_big_constraintLayout);
+//
+//                ConstraintLayout constraintLayoutSmall = view.findViewById(R.id.cardview_small_constraintLayout);
+
+                View inflatedView = getLayoutInflater().inflate(R.layout.cardview_simple_big, null);
+                ConstraintLayout constraintLayoutBig = inflatedView.findViewById(R.id.categories_fragment_simple_cardview_constraintLayout);
+
+                ConstraintLayout constraintLayoutSmall = view.findViewById(R.id.categories_fragment_favorites_cardview_constraintLayout);
+
+                ConstraintSet constraintSetSmall = new ConstraintSet();
+                constraintSetSmall.clone(constraintLayoutSmall);
+
+                ConstraintSet constraintSetBig = new ConstraintSet();
+                constraintSetBig.clone(constraintLayoutBig);
+
+                TransitionManager.beginDelayedTransition(constraintLayoutSmall);
+                constraintSetBig.applyTo(constraintLayoutSmall);
+
+                System.out.println("Acabou");
+
+            }
+        });
+
+
         return view;
     }
 
@@ -94,6 +131,5 @@ public class CategoryListFragment extends Fragment {
             categoriesFavoriteMap.put(category, 0);
         }
     }
-
 
 }

@@ -30,7 +30,12 @@ public class ViewRecipesActivity extends AppCompatActivity {
         collapsingToolbarLayout.setExpandedTitleTypeface(ResourcesCompat.getFont(getApplicationContext(), R.font.abel_regular));
 
         CategoryListFragment categoryListFragment = new CategoryListFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.view_recipes_nestedscrollview, categoryListFragment).commit();
+        getSupportFragmentManager().beginTransaction().add(R.id.view_recipes_fragment_container, categoryListFragment).commit();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 
     @Override
