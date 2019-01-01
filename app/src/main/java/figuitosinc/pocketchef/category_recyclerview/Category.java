@@ -4,12 +4,10 @@ public class Category {
 
     private String name;
     private int recipeCount;
-    private int favoriteCount;
 
-    public Category(String name, int recipeCount, int favoriteCount) {
+    public Category(String name, int recipeCount) {
         this.name = name;
         this.recipeCount = recipeCount;
-        this.favoriteCount = favoriteCount;
     }
 
     public String getName() {
@@ -18,9 +16,5 @@ public class Category {
 
     public int getRecipeCount() {
         return recipeCount;
-    }
-
-    public int getFavoriteCount() {
-        return favoriteCount;
     }
 }

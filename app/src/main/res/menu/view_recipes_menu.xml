@@ -3,14 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/menu_settings"
-        android:title="Settings"
         android:iconTint="@color/colorPrimaryExtraDark"
+        android:title="Settings"
         app:showAsAction="never" />
-    <!--<item-->
-    <!--android:id="@+id/menu_search"-->
-    <!--android:title="Search"-->
-    <!--android:iconTint="@color/colorPrimaryExtraDark"-->
-    <!--app:actionViewClass="android.support.v7.widget.SearchView"-->
-    <!--app:showAsAction="always|collapseActionView" />-->
+    <item
+        android:id="@+id/menu_search"
+        android:icon="@drawable/ic_search_darkgreen_24dp"
+        android:title="Search Category"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        app:showAsAction="ifRoom|collapseActionView" />
 
 </menu>

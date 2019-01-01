@@ -1,6 +1,6 @@
 package figuitosinc.pocketchef.database;
 
-public class CategoryPOJO {
+public class RecipeCategoryPOJO {
     public String categoryOne;
     public String categoryTwo;
     public String categoryThree;

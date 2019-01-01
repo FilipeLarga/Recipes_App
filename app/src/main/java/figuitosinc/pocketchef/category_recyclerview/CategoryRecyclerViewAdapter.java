@@ -12,6 +12,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.List;
+import java.util.Random;
 
 import figuitosinc.pocketchef.R;
 
@@ -19,6 +20,7 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
 
     private Context context;
     private List<Category> categories;
+    private int lastPosition = -1;
 
     public CategoryRecyclerViewAdapter(Context context, List<Category> categories) {
         this.context = context;
@@ -29,24 +31,27 @@ public class CategoryRecyclerViewAdapter extends RecyclerView.Adapter<CategoryRe
     @Override
     public CategoryViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.cardview_category_small, viewGroup, false);
+        View view = inflater.inflate(R.layout.cardview_category, viewGroup, false);
         return new CategoryViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, int i) {
-        if (categories.get(i).getRecipeCount() != 1)
-            categoryViewHolder.recipeCountTextView.setText(categories.get(i).getRecipeCount() + " Recipes");
-        else
-            categoryViewHolder.recipeCountTextView.setText(categories.get(i).getRecipeCount() + " Recipe");
+    public void onViewDetachedFromWindow(@NonNull CategoryViewHolder holder) {
+        super.onViewDetachedFromWindow(holder);
+        holder.itemView.clearAnimation();
+    }
 
-        if (categories.get(i).getFavoriteCount() != 1)
-            categoryViewHolder.favoriteCountTextView.setText(categories.get(i).getFavoriteCount() + " Favorites");
+    @Override
+    public void onBindViewHolder(@NonNull CategoryViewHolder categoryViewHolder, int i) {
+
+        int x = new Random().nextInt(10);
+
+        if (categories.get(i).getRecipeCount() != 1)
+            categoryViewHolder.recipeCountTextView.setText(x + "");
         else
-            categoryViewHolder.favoriteCountTextView.setText(categories.get(i).getFavoriteCount() + " Favorite");
+            categoryViewHolder.recipeCountTextView.setText(x + "");
 
         categoryViewHolder.titleTextView.setText(categories.get(i).getName());
-
         Glide.with(context).load(context.getResources().getIdentifier("category_icon_" + categories.get(i).getName().toLowerCase() + "_small", "drawable", context.getPackageName())).into(categoryViewHolder.imageView);
     }
 

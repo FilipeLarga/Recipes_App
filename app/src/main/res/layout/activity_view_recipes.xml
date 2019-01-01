@@ -11,7 +11,7 @@
         android:id="@+id/view_recipes_appbarlayout"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="@color/colorSecondaryExtraLight"
+        android:background="@color/colorSecondaryBackground"
         android:fitsSystemWindows="true">
 
         <android.support.design.widget.CollapsingToolbarLayout
@@ -29,6 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
+                style="@style/AppTheme.Toolbar"
                 app:title="Categories">
 
             </android.support.v7.widget.Toolbar>
@@ -36,6 +37,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/view_recipes_scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
@@ -44,8 +46,8 @@
             android:id="@+id/view_recipes_fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
             android:orientation="vertical">
-
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>

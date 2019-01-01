@@ -1,20 +1,27 @@
 <resources>
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowActivityTransitions">true</item>
         <item name="colorPrimary">@color/colorPrimaryExtraDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
         <item name="colorAccent">@color/colorSecondary</item>
-        <item name="android:colorBackground">@color/colorSecondaryExtraLight</item>
+        <item name="android:colorBackground">@color/colorSecondaryBackground</item>
     </style>
 
     <style name="AppTheme.Launcher">
+        <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowBackground">@drawable/launch_screen</item>
     </style>
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActivityTransitions">true</item>
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="android:colorBackground">@color/colorSecondaryExtraLight</item>
+        <item name="android:colorBackground">@color/colorSecondaryBackground</item>
         <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
+        <item name="android:textColorSecondary">@color/colorPrimaryExtraDark</item>
+    </style>
+
+    <style name="AppTheme.Toolbar" parent="AppTheme">
         <item name="android:textColorSecondary">@color/colorPrimaryExtraDark</item>
     </style>
 

@@ -20,7 +20,7 @@ public class HomeActivityViewModel extends AndroidViewModel {
         return db.recipeDao().loadAllRecipes();
     }
 
-    public LiveData<List<CategoryPOJO>> getRecipeCategory() {
+    public LiveData<List<RecipeCategoryPOJO>> getRecipeCategory() {
         return db.recipeDao().getRecipeCategory();
     }
 }

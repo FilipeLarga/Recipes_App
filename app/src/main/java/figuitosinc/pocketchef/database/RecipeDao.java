@@ -29,5 +29,5 @@ public interface RecipeDao {
     void deleteAll();
 
     @Query("SELECT categoryOne, categoryTwo, categoryThree, favorite FROM Recipe")
-    LiveData<List<CategoryPOJO>> getRecipeCategory();
+    LiveData<List<RecipeCategoryPOJO>> getRecipeCategory();
 }

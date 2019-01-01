@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorSecondaryExtraLight"
+    android:background="@color/colorSecondaryBackground"
     tools:context=".ui.HomeActivity">
 
     <LinearLayout
@@ -33,7 +33,7 @@
             android:id="@+id/home_logo_ImageView"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
 
             android:contentDescription="@string/app_name" />
 
@@ -94,26 +94,18 @@
         android:id="@+id/home_line_top"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginLeft="36dp"
-        android:layout_marginRight="36dp"
+        android:layout_marginLeft="32sp"
+        android:layout_marginRight="32sp"
         android:background="@color/colorPrimaryExtraDark"
         app:layout_constraintBottom_toTopOf="@id/home_view_recipe_Button"
         app:layout_constraintTop_toBottomOf="@id/home_image_LinearLayout" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryExtraDark"
-        app:layout_constraintBottom_toBottomOf="@id/home_view_recipe_Button"
-        app:layout_constraintRight_toLeftOf="@id/home_view_recipe_Button"
-        app:layout_constraintTop_toTopOf="@id/home_view_recipe_Button" />
 
     <Button
         android:id="@+id/home_view_recipe_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp"
         android:background="@drawable/normal_button_dark_selector"
         android:fontFamily="@font/montserrat_medium"
         android:onClick="startListRecipesActivity"
@@ -125,28 +117,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_line_top" />
 
-    <View
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryExtraDark"
-        app:layout_constraintBottom_toBottomOf="@id/home_view_recipe_Button"
-        app:layout_constraintLeft_toRightOf="@id/home_view_recipe_Button"
-        app:layout_constraintTop_toTopOf="@id/home_view_recipe_Button" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryExtraDark"
-        app:layout_constraintBottom_toBottomOf="@id/home_add_recipe_Button"
-        app:layout_constraintRight_toLeftOf="@id/home_add_recipe_Button"
-        app:layout_constraintTop_toTopOf="@id/home_add_recipe_Button" />
-
     <Button
         android:id="@+id/home_add_recipe_Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp"
         android:background="@drawable/normal_button_dark_selector"
         android:fontFamily="@font/montserrat_medium"
         android:onClick="startAddRecipeActivity"
@@ -158,28 +134,12 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_view_recipe_Button" />
 
-    <View
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryExtraDark"
-        app:layout_constraintBottom_toBottomOf="@id/home_add_recipe_Button"
-        app:layout_constraintLeft_toRightOf="@id/home_add_recipe_Button"
-        app:layout_constraintTop_toTopOf="@id/home_add_recipe_Button" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryExtraDark"
-        app:layout_constraintBottom_toBottomOf="@id/button3"
-        app:layout_constraintRight_toLeftOf="@id/button3"
-        app:layout_constraintTop_toTopOf="@id/button3" />
-
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp"
         android:background="@drawable/normal_button_dark_selector"
         android:fontFamily="@font/montserrat_medium"
         android:text="@string/settings"
@@ -190,29 +150,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/home_add_recipe_Button" />
 
-    <View
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryExtraDark"
-        app:layout_constraintBottom_toBottomOf="@id/button3"
-        app:layout_constraintLeft_toRightOf="@id/button3"
-        app:layout_constraintTop_toTopOf="@id/button3" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryExtraDark"
-        app:layout_constraintBottom_toBottomOf="@id/button4"
-        app:layout_constraintRight_toLeftOf="@id/button4"
-        app:layout_constraintTop_toTopOf="@id/button4" />
-
     <Button
         android:id="@+id/button4"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="50dp"
-        android:layout_marginRight="50dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginRight="46dp"
         android:background="@drawable/normal_button_dark_selector"
         android:fontFamily="@font/montserrat_medium"
         android:text="Another one"
@@ -222,14 +166,5 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button3" />
-
-    <View
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimaryExtraDark"
-        app:layout_constraintBottom_toBottomOf="@id/button4"
-        app:layout_constraintLeft_toRightOf="@id/button4"
-        app:layout_constraintTop_toTopOf="@id/button4" />
-
 
 </android.support.constraint.ConstraintLayout>
