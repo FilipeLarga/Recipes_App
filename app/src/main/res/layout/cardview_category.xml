@@ -10,8 +10,7 @@
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground"
-    app:cardBackgroundColor="@color/colorSecondaryExtraLight"
-    app:cardCornerRadius="7dp">
+    app:cardBackgroundColor="@color/colorSecondaryExtraLight">
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/cardview_small_constraintLayout"

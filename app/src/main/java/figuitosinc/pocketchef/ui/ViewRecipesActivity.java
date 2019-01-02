@@ -1,10 +1,15 @@
 package figuitosinc.pocketchef.ui;
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.SearchManager;
+import android.content.Context;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.res.ResourcesCompat;
-import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -12,6 +17,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 
 import figuitosinc.pocketchef.R;
 
@@ -50,37 +56,85 @@ public class ViewRecipesActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.view_recipes_menu, menu);
 
-        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
-        searchView.setIconifiedByDefault(true);
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.menu_search).getActionView();
+        searchView.setSearchableInfo(
+                searchManager.getSearchableInfo(getComponentName()));
 
+        searchView.setIconified(false);
 
+        searchView.setSubmitButtonEnabled(true);
+        searchView.setQueryHint("Search...");
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        System.out.println(item.getItemId());
-        System.out.println(R.id.menu_settings + " settings");
-        System.out.println(R.id.menu_search + " search");
         switch (item.getItemId()) {
             case android.R.id.home:
-                System.out.println("Entrei Home");
                 finish();
                 return true;
             case R.id.menu_settings:
-                System.out.println("Entrei Settings");
                 return true;
             case R.id.menu_search:
-                System.out.println("Entrei");
-                final NestedScrollView nestedScrollView = findViewById(R.id.view_recipes_scrollview);
-                nestedScrollView.post(new Runnable() {
-                    public void run() {
-                        nestedScrollView.fullScroll(View.FOCUS_UP);
-                    }
-                });
+
+//                circleReveal(R.id.view_recipes_collapsingtoolbar, 1, true, true);
+
+//                final NestedScrollView nestedScrollView = findViewById(R.id.view_recipes_scrollview);
+//                nestedScrollView.post(new Runnable() {
+//                    public void run() {
+//                        nestedScrollView.fullScroll(View.FOCUS_DOWN);
+//                    }
+//                });
                 return true;
         }
         return super.onOptionsItemSelected(item);
-
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+    public void circleReveal(int viewID, int posFromRight, boolean containsOverflow, final boolean isShow) {
+        final View myView = findViewById(viewID);
+
+        int width = myView.getWidth();
+
+        if (posFromRight > 0)
+            width -=
+                    width -= (posFromRight * getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_material)) - (getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_material) / 2);
+
+        if (containsOverflow)
+            width -= getResources().getDimensionPixelSize(R.dimen.abc_action_button_min_width_overflow_material);
+
+        int cx = width;
+        int cy = myView.getHeight() / 2;
+
+        Animator anim;
+        if (isShow)
+            anim = ViewAnimationUtils.createCircularReveal(myView, cx, cy, 0, (float) width);
+        else
+            anim = ViewAnimationUtils.createCircularReveal(myView, cx, cy, (float) width, 0);
+
+        anim.setDuration((long) 220);
+
+        // make the view invisible when the animation is done
+        anim.addListener(new AnimatorListenerAdapter() {
+            @Override
+            public void onAnimationEnd(Animator animation) {
+                if (!isShow) {
+                    super.onAnimationEnd(animation);
+                    myView.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        // make the view visible and start the animation
+        if (isShow)
+            myView.setVisibility(View.VISIBLE);
+
+        // start the animation
+        anim.start();
+    }
+
+
 }
