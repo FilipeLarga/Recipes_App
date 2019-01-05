@@ -12,7 +12,7 @@
     android:foreground="?attr/selectableItemBackground"
     app:cardCornerRadius="7dp"
     app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toLeftOf="@id/categories_fragment_all_cardview"
+    app:layout_constraintRight_toLeftOf="@id/categories_fragment_random_cardview"
     app:layout_constraintTop_toTopOf="parent">
 
     <android.support.constraint.ConstraintLayout
@@ -36,29 +36,29 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/cardview_favorite_icon_imageview"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_margin="12dp"
-            android:src="@drawable/category_icon_favorite_small"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardview_favorite_title_textview" />
+        <!--<ImageView-->
+        <!--android:id="@+id/cardview_favorite_icon_imageview"-->
+        <!--android:layout_width="48dp"-->
+        <!--android:layout_height="48dp"-->
+        <!--android:layout_margin="12dp"-->
+        <!--android:src="@drawable/category_icon_favorite_small"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/cardview_favorite_title_textview" />-->
 
-        <TextView
-            android:id="@+id/cardview_favorite_recipe_count_textview"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:fontFamily="@font/abel_regular"
-            android:text="16 Recipes"
-            android:textColor="@color/colorPrimary"
-            android:textSize="15sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cardview_favorite_icon_imageview" />
+        <!--<TextView-->
+        <!--android:id="@+id/cardview_favorite_recipe_count_textview"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="15dp"-->
+        <!--android:fontFamily="@font/abel_regular"-->
+        <!--android:text="16 Recipes"-->
+        <!--android:textColor="@color/colorPrimary"-->
+        <!--android:textSize="15sp"-->
+        <!--app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--app:layout_constraintRight_toRightOf="parent"-->
+        <!--app:layout_constraintTop_toBottomOf="@id/cardview_favorite_icon_imageview" />-->
 
     </android.support.constraint.ConstraintLayout>
 

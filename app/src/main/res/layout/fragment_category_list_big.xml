@@ -12,20 +12,89 @@
         android:layout_height="match_parent">
 
         <android.support.v7.widget.CardView
+            android:id="@+id/categories_fragment_recipes_cardview"
+            app:cardCornerRadius="5dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:clickable="true"
+            app:layout_constraintBottom_toTopOf="@id/categories_fragment_browse_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categories_fragment_random_cardview">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/categories_fragment_recipes_cardview_title_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
+                    android:fontFamily="@font/lenkton_regular"
+                    android:text="Repertoire"
+                    android:textColor="@color/colorPrimaryExtraDark"
+                    android:textSize="32sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/categories_fragment_recipes_total_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:fontFamily="@font/lenkton_regular"
+                    android:text="Total"
+                    android:textColor="@color/colorPrimaryExtraDark"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent" />
+
+                <TextView
+                    android:id="@+id/categories_fragment_recipes_favorites_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:fontFamily="@font/lenkton_regular"
+                    android:text="Favorites"
+                    android:textColor="@color/colorPrimaryExtraDark"
+                    android:textSize="20dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toRightOf="@id/categories_fragment_recipes_total_textview" />
+
+                <ImageView
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_margin="24dp"
+                    android:src="@drawable/category_icon_recipes"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+
+            </android.support.constraint.ConstraintLayout>
+
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
             android:id="@+id/categories_fragment_favorites_cardview"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="18dp"
+            android:layout_marginBottom="8dp"
+            android:animateLayoutChanges="true"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/colorSecondaryExtraLight"
-            app:cardCornerRadius="7dp"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@id/categories_fragment_random_cardview"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@id/categories_fragment_all_cardview"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <android.support.constraint.ConstraintLayout
@@ -37,192 +106,130 @@
                     android:id="@+id/categories_fragment_favorites_cardview_title_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/lenkton_bold"
-                    android:text="Favorites"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginRight="12dp"
+                    android:fontFamily="@font/lenkton_regular"
+                    android:text="Pick A Winner!"
                     android:textColor="@color/colorPrimaryExtraDark"
-                    android:textSize="24sp"
+                    android:textSize="30sp"
+                    app:layout_constraintLeft_toRightOf="@id/categories_Fragment_favorites_cardview_separator"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/categories_fragment_favorites_cardview_text1_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="12dp"
+                    android:fontFamily="@font/lenkton_regular"
+                    android:text="They're your favorites for a reason. Enjoy!"
+                    android:textColor="@color/colorPrimaryExtraDark"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/categories_fragment_favorites_cardview_title_textview"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/categories_fragment_favorites_cardview_title_textview"
+                    app:layout_constraintVertical_bias="0.2" />
+
+                <View
+                    android:id="@+id/categories_Fragment_favorites_cardview_separator"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/colorPrimaryExtraDark"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.38"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <View
-                    android:id="@+id/categories_fragment_favorites_cardview_line_divider"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/colorPrimaryExtraDark"
-                    app:layout_constraintBottom_toTopOf="@id/categories_fragment_favorites_cardview_bottom_constraint"
-                    app:layout_constraintTop_toBottomOf="@id/categories_fragment_favorites_cardview_title_textview" />
-
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/categories_fragment_favorites_cardview_bottom_constraint"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/categories_fragment_favorites_cardview_icon_imageview"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:src="@drawable/category_icon_favorites"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/categories_fragment_favorites_cardview_line_divider">
-
-                    <TextView
-                        android:id="@+id/categories_fragment_favorites_cardview_recipe_count_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/abel_regular"
-                        android:textColor="@color/colorSecondary"
-                        android:textSize="28sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/categories_fragment_favorites_cardview_vertical_line_divider"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/categories_fragment_favorites_cardview_recipe_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/lenkton_bold"
-                        android:text="Recipes"
-                        android:textColor="@color/colorPrimaryExtraDark"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/categories_fragment_favorites_cardview_vertical_line_divider"
-                        app:layout_constraintTop_toBottomOf="@id/categories_fragment_favorites_cardview_recipe_count_textview" />
-
-                    <View
-                        android:id="@+id/categories_fragment_favorites_cardview_vertical_line_divider"
-                        android:layout_width="1dp"
-                        android:layout_height="0dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="@color/colorPrimaryExtraLight"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/categories_fragment_favorites_cardview_icon_imageview"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:src="@drawable/category_icon_favorite_small"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toRightOf="@id/categories_fragment_favorites_cardview_vertical_line_divider"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </android.support.constraint.ConstraintLayout>
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toLeftOf="@id/categories_Fragment_favorites_cardview_separator"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </android.support.constraint.ConstraintLayout>
 
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/categories_fragment_all_cardview"
+            android:id="@+id/categories_fragment_random_cardview"
             android:layout_width="0dp"
+            android:layout_marginBottom="8dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="18dp"
             android:animateLayoutChanges="true"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
-            app:cardBackgroundColor="@color/colorSecondaryExtraLight"
-            app:cardCornerRadius="7dp"
-            app:layout_constraintLeft_toRightOf="@id/categories_fragment_favorites_cardview"
+            app:cardBackgroundColor="@android:color/white"
+            app:cardCornerRadius="5dp"
+            app:layout_constraintBottom_toTopOf="@id/categories_fragment_recipes_cardview"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/categories_fragment_favorites_cardview">
 
             <android.support.constraint.ConstraintLayout
-                android:id="@+id/categories_fragment_all_cardview_small_constraintLayout"
+                android:id="@+id/categories_fragment_random_cardview_constraintLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/categories_fragment_all_cardview_title_textview"
+                    android:id="@+id/categories_fragment_random_cardview_title_textview"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:fontFamily="@font/lenkton_bold"
-                    android:text="All"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/lenkton_regular"
+                    android:text="Roll The Dice!"
                     android:textColor="@color/colorPrimaryExtraDark"
-                    android:textSize="24sp"
+                    android:textSize="30sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/categories_fragment_random_cardview_text1_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/lenkton_regular"
+                    android:text="They say the best things in life come unexpectedly."
+                    android:textColor="@color/colorPrimaryExtraDark"
+                    android:textSize="17sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="@id/categories_fragment_random_cardview_title_textview"
+                    app:layout_constraintRight_toLeftOf="@id/categories_Fragment_random_cardview_separator"
+                    app:layout_constraintTop_toBottomOf="@id/categories_fragment_random_cardview_title_textview"
+                    app:layout_constraintVertical_bias="0.2" />
+
+                <View
+                    android:id="@+id/categories_Fragment_random_cardview_separator"
+                    android:layout_width="1dp"
+                    android:layout_height="0dp"
+                    android:background="@color/colorPrimaryExtraDark"
+                    android:visibility="invisible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.635"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <View
-                    android:id="@+id/categories_fragment_all_cardview_line_divider"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="@color/colorPrimaryExtraDark"
-                    app:layout_constraintBottom_toTopOf="@id/categories_fragment_all_cardview_bottom_constraint"
-                    app:layout_constraintTop_toBottomOf="@id/categories_fragment_all_cardview_title_textview" />
-
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/categories_fragment_all_cardview_bottom_constraint"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <ImageView
+                    android:id="@+id/categories_fragment_random_cardview_icon_imageview"
+                    android:layout_width="98dp"
+                    android:layout_height="98dp"
+                    android:src="@drawable/category_icon_random"
+                    android:transitionName="sharedtransition"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/categories_fragment_all_cardview_line_divider">
-
-                    <TextView
-                        android:id="@+id/categories_fragment_all_cardview_recipe_count_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:fontFamily="@font/abel_regular"
-                        android:textColor="@color/colorSecondary"
-                        android:textSize="28sp"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/categories_fragment_all_cardview_vertical_line_divider"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/categories_fragment_all_cardview_recipe_textview"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="4dp"
-                        android:fontFamily="@font/lenkton_bold"
-                        android:text="Recipes"
-                        android:textColor="@color/colorPrimaryExtraDark"
-                        android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toLeftOf="@id/categories_fragment_all_cardview_vertical_line_divider"
-                        app:layout_constraintTop_toBottomOf="@id/categories_fragment_all_cardview_recipe_count_textview" />
-
-                    <View
-                        android:id="@+id/categories_fragment_all_cardview_vertical_line_divider"
-                        android:layout_width="1dp"
-                        android:layout_height="0dp"
-                        android:layout_marginTop="12dp"
-                        android:layout_marginBottom="12dp"
-                        android:background="@color/colorPrimaryExtraLight"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toLeftOf="parent"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <ImageView
-                        android:id="@+id/categories_fragment_all_cardview_icon_imageview"
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:layout_marginTop="4dp"
-                        android:layout_marginBottom="4dp"
-                        android:src="@drawable/category_icon_recipes_small"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintLeft_toRightOf="@id/categories_fragment_all_cardview_vertical_line_divider"
-                        app:layout_constraintRight_toRightOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </android.support.constraint.ConstraintLayout>
+                    app:layout_constraintLeft_toRightOf="@id/categories_Fragment_random_cardview_separator"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
             </android.support.constraint.ConstraintLayout>
 
@@ -237,7 +244,7 @@
             android:layout_marginBottom="20dp"
             android:animateLayoutChanges="true"
             app:layout_constraintBottom_toTopOf="@id/categories_fragment_recyclerView"
-            app:layout_constraintTop_toBottomOf="@id/categories_fragment_favorites_cardview">
+            app:layout_constraintTop_toBottomOf="@id/categories_fragment_random_cardview">
 
             <View
                 android:id="@+id/categories_fragment_divider_line_left"

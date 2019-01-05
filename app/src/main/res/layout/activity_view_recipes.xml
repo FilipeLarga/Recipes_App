@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
     tools:context=".ui.ViewRecipesActivity">
-
 
     <android.support.design.widget.AppBarLayout
         android:id="@+id/view_recipes_appbarlayout"
@@ -26,10 +26,10 @@
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/view_recipes_toolbar"
+                style="@style/AppTheme.Toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                style="@style/AppTheme.Toolbar"
                 app:title="Categories">
 
             </android.support.v7.widget.Toolbar>
@@ -47,10 +47,16 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:animateLayoutChanges="true"
-            android:orientation="vertical">
-        </LinearLayout>
+            android:orientation="vertical"></LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_margin="12dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/outline_arrow_drop_down_circle_black_48dp_thinner2" />
 
 </android.support.design.widget.CoordinatorLayout>

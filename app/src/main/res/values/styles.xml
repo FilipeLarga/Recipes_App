@@ -2,10 +2,12 @@
 
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="android:windowActivityTransitions">true</item>
+        <item name="android:windowContentTransitions">true</item>
         <item name="colorPrimary">@color/colorPrimaryExtraDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
         <item name="colorAccent">@color/colorSecondary</item>
         <item name="android:colorBackground">@color/colorSecondaryBackground</item>
+        <item name="android:statusBarColor">@color/colorPrimaryExtraDark</item>
     </style>
 
     <style name="AppTheme.Launcher">
@@ -15,10 +17,12 @@
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowActivityTransitions">true</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryExtraDark</item>
         <item name="android:colorBackground">@color/colorSecondaryBackground</item>
         <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
         <item name="android:textColorSecondary">@color/colorPrimaryExtraDark</item>
+        <item name="android:statusBarColor">@color/colorPrimaryExtraDark</item>
+        <item name="colorAccent">@color/colorSecondary</item>
     </style>
 
     <style name="AppTheme.Toolbar" parent="AppTheme">
@@ -35,5 +39,9 @@
         <item name="android:textSize">42sp</item>
         <item name="android:textColor">@color/colorSecondary</item>
     </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
 </resources>

@@ -1,0 +1,34 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:name="figuitosinc.pocketchef.TransitionTestFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:layout="@layout/fragment_transition_test">
+
+    <ImageView
+        android:id="@+id/transition_imageview2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/category_icon_random_secondary"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/transition_imageview"
+        app:layout_constraintLeft_toLeftOf="@id/transition_imageview"
+        app:layout_constraintRight_toRightOf="@id/transition_imageview"
+        app:layout_constraintTop_toTopOf="@id/transition_imageview" />
+
+    <ImageView
+        android:id="@+id/transition_imageview"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:src="@drawable/category_icon_random"
+        android:transitionName="sharedtransition"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+
+</android.support.constraint.ConstraintLayout>

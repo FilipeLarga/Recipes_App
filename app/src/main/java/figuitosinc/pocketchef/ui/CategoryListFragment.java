@@ -2,16 +2,18 @@ package figuitosinc.pocketchef.ui;
 
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -20,6 +22,7 @@ import java.util.Map;
 
 import figuitosinc.pocketchef.CategoriesEnum;
 import figuitosinc.pocketchef.R;
+import figuitosinc.pocketchef.TransitionTest;
 import figuitosinc.pocketchef.category_recyclerview.Category;
 import figuitosinc.pocketchef.category_recyclerview.CategoryRecyclerViewAdapter;
 import figuitosinc.pocketchef.database.RecipeCategoryPOJO;
@@ -44,6 +47,9 @@ public class CategoryListFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+        startRandom((CardView) view.findViewById(R.id.categories_fragment_random_cardview));
+
         return view;
     }
 
@@ -85,10 +91,10 @@ public class CategoryListFragment extends Fragment {
                     }
                 }
 
-                TextView textView = view.findViewById(R.id.categories_fragment_favorites_cardview_recipe_count_textview);
-                textView.setText(favorites + "");
-                textView = view.findViewById(R.id.categories_fragment_all_cardview_recipe_count_textview);
-                textView.setText(list.size() + "");
+//                TextView textView = view.findViewById(R.id.categories_fragment_favorites_cardview_recipe_count_textview);
+//                textView.setText(favorites + "");
+////                textView = view.findViewById(R.id.categories_fragment_all_cardview_recipe_count_textview);
+//                textView.setText(list.size() + "");
 
                 initializeCategoryList();
                 adapter.notifyDataSetChanged();
@@ -108,6 +114,20 @@ public class CategoryListFragment extends Fragment {
             categoriesCountMap.put(category, 0);
 //            categoriesFavoriteMap.put(category, 0);
         }
+    }
+
+    public void startRandom(CardView cv) {
+        cv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                System.out.println("Click");
+                Intent intent = new Intent(getContext(), TransitionTest.class);
+                ActivityOptionsCompat options = ActivityOptionsCompat.
+                        makeSceneTransitionAnimation(getActivity(), view.findViewById(R.id.categories_fragment_random_cardview_icon_imageview), "sharedtransition");
+                startActivity(intent, options.toBundle());
+
+            }
+        });
     }
 
 }

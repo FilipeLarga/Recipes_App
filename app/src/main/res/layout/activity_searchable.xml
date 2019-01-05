@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".ui.SearchableActivity">
+
+    <TextView
+        android:id="@+id/searchable_activity_category_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abel_regular"
+        android:paddingStart="16dp"
+        android:text="Categories"
+        android:textColor="@color/colorPrimaryExtraDark"
+        android:textSize="24sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/searchable_activity_category_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        app:layout_constraintTop_toBottomOf="@id/searchable_activity_category_header"></ListView>
+
+    <TextView
+        android:id="@+id/searchable_activity_recipe_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/abel_regular"
+        android:paddingStart="16dp"
+        android:text="Recipes"
+        android:textColor="@color/colorPrimaryExtraDark"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/searchable_activity_category_listview" />
+
+    <ListView
+        android:id="@+id/searchable_activity_recipe_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        app:layout_constraintTop_toBottomOf="@id/searchable_activity_recipe_header"></ListView>
+
+</android.support.constraint.ConstraintLayout>

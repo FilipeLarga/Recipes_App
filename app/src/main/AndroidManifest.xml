@@ -19,10 +19,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ui.ViewRecipesActivity"
             android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.SearchableActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value="ui.SearchableActivity" />
+
+        <activity
+            android:name=".TransitionTest"
+            android:label="@string/title_activity_transition_test"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

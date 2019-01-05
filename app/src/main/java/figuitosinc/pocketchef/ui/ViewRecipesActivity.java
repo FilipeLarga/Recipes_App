@@ -3,6 +3,7 @@ package figuitosinc.pocketchef.ui;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.SearchManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.os.Build;
@@ -20,6 +21,7 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 
 import figuitosinc.pocketchef.R;
+import figuitosinc.pocketchef.ViewCategoriesFirstFragment;
 
 public class ViewRecipesActivity extends AppCompatActivity {
 
@@ -42,8 +44,9 @@ public class ViewRecipesActivity extends AppCompatActivity {
         collapsingToolbarLayout.setExpandedTitleTypeface(ResourcesCompat.getFont(getApplicationContext(), R.font.abel_regular));
 
         if (savedInstanceState == null) {
-            categoryListFragment = new CategoryListFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.view_recipes_fragment_container, categoryListFragment).commit();
+//            categoryListFragment = new CategoryListFragment();
+            ViewCategoriesFirstFragment viewCategoriesFirstFragment = new ViewCategoriesFirstFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.view_recipes_fragment_container, viewCategoriesFirstFragment).commit();
         }
     }
 
@@ -56,17 +59,15 @@ public class ViewRecipesActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.view_recipes_menu, menu);
 
-        SearchManager searchManager =
-                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView =
-                (SearchView) menu.findItem(R.id.menu_search).getActionView();
-        searchView.setSearchableInfo(
-                searchManager.getSearchableInfo(getComponentName()));
+        // Get the SearchView and set the searchable configuration
+        SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
+        // Assumes current activity is the searchable activity
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this, SearchableActivity.class)));
+        System.out.println("NOME " + searchManager.getSearchableInfo(new ComponentName(this, SearchableActivity.class)));
+        searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 
-        searchView.setIconified(false);
 
-        searchView.setSubmitButtonEnabled(true);
-        searchView.setQueryHint("Search...");
         return true;
     }
 
@@ -78,7 +79,7 @@ public class ViewRecipesActivity extends AppCompatActivity {
                 return true;
             case R.id.menu_settings:
                 return true;
-            case R.id.menu_search:
+//            case R.id.menu_search:
 
 //                circleReveal(R.id.view_recipes_collapsingtoolbar, 1, true, true);
 
@@ -88,7 +89,7 @@ public class ViewRecipesActivity extends AppCompatActivity {
 //                        nestedScrollView.fullScroll(View.FOCUS_DOWN);
 //                    }
 //                });
-                return true;
+//                return true;
         }
         return super.onOptionsItemSelected(item);
     }
