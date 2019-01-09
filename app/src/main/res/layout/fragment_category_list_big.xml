@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimaryExtraLight"
     android:animateLayoutChanges="true"
-
     tools:context=".ui.CategoryListFragment">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/categories_fragment_first_page"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.v7.widget.CardView
             android:id="@+id/categories_fragment_recipes_cardview"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="8dp"
+            android:layout_height="0dp"
             android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
             android:clickable="true"
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="5dp"
-            app:layout_constraintBottom_toBottomOf="@id/categories_fragment_recent_cardview"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/categories_fragment_recent_cardview"
-            app:layout_constraintTop_toTopOf="@id/categories_fragment_recent_cardview">
+            app:layout_constraintBottom_toBottomOf="@id/categories_fragment_recent_cardview"
+            app:layout_constraintTop_toTopOf="parent">
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
@@ -118,8 +119,6 @@
             android:focusable="true"
             android:foreground="?attr/selectableItemBackground"
             app:cardCornerRadius="5dp"
-            app:layout_constraintBottom_toTopOf="@id/categories_fragment_favorites_cardview"
-            app:layout_constraintHorizontal_bias="1"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -253,7 +252,7 @@
             android:foreground="?attr/selectableItemBackground"
             app:cardBackgroundColor="@android:color/white"
             app:cardCornerRadius="5dp"
-            app:layout_constraintBottom_toTopOf="@id/categories_fragment_browse_layout"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/categories_fragment_favorites_cardview">
@@ -318,6 +317,25 @@
         </android.support.v7.widget.CardView>
 
 
+
+    </android.support.constraint.ConstraintLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:drawableEnd="@drawable/ic_keyboard_arrow_down_black_48dp"
+        android:text="BROWSE"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/categories_fragment_second_page"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toBottomOf="@id/categories_fragment_first_page">
+
         <android.support.constraint.ConstraintLayout
             android:id="@+id/categories_fragment_browse_layout"
             android:layout_width="match_parent"
@@ -326,7 +344,7 @@
             android:layout_marginBottom="20dp"
             android:animateLayoutChanges="true"
             app:layout_constraintBottom_toTopOf="@id/categories_fragment_recyclerView"
-            app:layout_constraintTop_toBottomOf="@id/categories_fragment_random_cardview">
+            app:layout_constraintTop_toTopOf="parent">
 
             <View
                 android:id="@+id/categories_fragment_divider_line_left"
@@ -375,4 +393,4 @@
 
     </android.support.constraint.ConstraintLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</android.support.constraint.ConstraintLayout>

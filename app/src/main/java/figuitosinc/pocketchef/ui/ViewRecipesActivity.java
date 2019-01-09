@@ -44,7 +44,7 @@ public class ViewRecipesActivity extends AppCompatActivity {
 
         if (savedInstanceState == null) {
             categoryListFragment = new CategoryListFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.view_recipes_fragment_container, categoryListFragment).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.view_recipes_scrollview, categoryListFragment).commit();
         }
     }
 

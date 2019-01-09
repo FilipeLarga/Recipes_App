@@ -8,8 +8,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.CardView;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -44,9 +42,9 @@ public class CategoryListFragment extends Fragment {
         setupViewModel();
         RecyclerView recyclerView = view.findViewById(R.id.categories_fragment_recyclerView);
         adapter = new CategoryRecyclerViewAdapter(getContext(), categories);
-        recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
+//        recyclerView.setAdapter(adapter);
+//        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2));
+//        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         startRandom((CardView) view.findViewById(R.id.categories_fragment_random_cardview));
 
