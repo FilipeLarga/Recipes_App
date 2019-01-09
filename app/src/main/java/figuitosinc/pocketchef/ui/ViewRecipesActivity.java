@@ -21,7 +21,6 @@ import android.view.View;
 import android.view.ViewAnimationUtils;
 
 import figuitosinc.pocketchef.R;
-import figuitosinc.pocketchef.ViewCategoriesFirstFragment;
 
 public class ViewRecipesActivity extends AppCompatActivity {
 
@@ -44,9 +43,8 @@ public class ViewRecipesActivity extends AppCompatActivity {
         collapsingToolbarLayout.setExpandedTitleTypeface(ResourcesCompat.getFont(getApplicationContext(), R.font.abel_regular));
 
         if (savedInstanceState == null) {
-//            categoryListFragment = new CategoryListFragment();
-            ViewCategoriesFirstFragment viewCategoriesFirstFragment = new ViewCategoriesFirstFragment();
-            getSupportFragmentManager().beginTransaction().replace(R.id.view_recipes_fragment_container, viewCategoriesFirstFragment).commit();
+            categoryListFragment = new CategoryListFragment();
+            getSupportFragmentManager().beginTransaction().replace(R.id.view_recipes_fragment_container, categoryListFragment).commit();
         }
     }
 
