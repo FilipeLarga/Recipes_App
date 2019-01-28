@@ -9,8 +9,10 @@ import android.graphics.PorterDuff;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.content.res.ResourcesCompat;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -49,6 +51,15 @@ public class ViewRecipesActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        if (categoryListFragment == null) {
+            categoryListFragment = new CategoryListFragment();
+            System.out.println("WTFTP");
+        }
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }
@@ -62,7 +73,6 @@ public class ViewRecipesActivity extends AppCompatActivity {
         SearchView searchView = (SearchView) menu.findItem(R.id.menu_search).getActionView();
         // Assumes current activity is the searchable activity
         searchView.setSearchableInfo(searchManager.getSearchableInfo(new ComponentName(this, SearchableActivity.class)));
-        System.out.println("NOME " + searchManager.getSearchableInfo(new ComponentName(this, SearchableActivity.class)));
         searchView.setIconifiedByDefault(false); // Do not iconify the widget; expand it by default
 
 
@@ -135,5 +145,18 @@ public class ViewRecipesActivity extends AppCompatActivity {
         anim.start();
     }
 
+
+    public void scrollToBrowse(View view) {
+        AppBarLayout appBarLayout = findViewById(R.id.view_recipes_appbarlayout);
+        appBarLayout.setExpanded(false, true);
+        final NestedScrollView nestedScrollView = findViewById(R.id.view_recipes_scrollview);
+        nestedScrollView.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                int[] result = categoryListFragment.getBrowseSizes();
+                nestedScrollView.smoothScrollTo(0, (result[0] + result[1] - result[2]) / 2);
+            }
+        }, 100);
+    }
 
 }

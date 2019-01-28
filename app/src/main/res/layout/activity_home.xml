@@ -54,7 +54,7 @@
         app:layout_constraintTop_toBottomOf="@id/home_title_LinearLayout" />
 
     <LinearLayout
-        android:id="@+id/home_image_LinearLayout"
+        android:id="@+id/home_image_ConstraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="46dp"
@@ -78,7 +78,7 @@
             app:layout_constraintRight_toRightOf="parent" />
 
         <TextView
-            android:id="@+id/home_count_TextView"
+            android:id="@+id/home_category_TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -98,7 +98,7 @@
         android:layout_marginRight="32sp"
         android:background="@color/colorPrimaryExtraDark"
         app:layout_constraintBottom_toTopOf="@id/home_view_recipe_Button"
-        app:layout_constraintTop_toBottomOf="@id/home_image_LinearLayout" />
+        app:layout_constraintTop_toBottomOf="@id/home_image_ConstraintLayout" />
 
     <Button
         android:id="@+id/home_view_recipe_Button"

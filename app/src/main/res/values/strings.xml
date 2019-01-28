@@ -4,14 +4,14 @@
     <string name="home_add_recipe">Add Recipe</string>
     <string name="settings">Settings</string>
 
-    <string-array name="quotes">
-        <item>\"Food is the ingredient that binds us together\"</item>
-        <item>\"First we eat, then we do everything else\"</item>
-    </string-array>
+    <!--<string-array name="quotes">-->
+    <!--<item>\"Food is the ingredient that binds us together\"</item>-->
+    <!--<item>\"First we eat, then we do everything else\"</item>-->
+    <!--</string-array>-->
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="search_hint">Search Recipes or Categories</string>
-    <string name="title_activity_transition_test">TransitionTest</string>
-    <string name="action_settings">Settings</string>
+    <!--&lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
+    <!--<string name="hello_blank_fragment">Hello blank fragment</string>-->
+    <!--<string name="search_hint">Search Recipes or Categories</string>-->
+    <!--<string name="title_activity_transition_test">TransitionTest</string>-->
+    <!--<string name="action_settings">Settings</string>-->
 </resources>
