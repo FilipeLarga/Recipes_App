@@ -127,7 +127,7 @@
         android:background="@drawable/normal_button"
         android:fontFamily="@font/lenkton_regular"
         android:foreground="?attr/selectableItemBackground"
-        android:onClick="startAddRecipeActivity"
+        android:onClick="startIngredientFilterActivity"
         android:text="@string/home_add_recipe"
         android:textColor="@color/colorPrimaryExtraDark"
         android:textSize="25sp"

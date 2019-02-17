@@ -9,9 +9,10 @@
     <!--<item>\"First we eat, then we do everything else\"</item>-->
     <!--</string-array>-->
 
-    <!--&lt;!&ndash; TODO: Remove or change this placeholder text &ndash;&gt;-->
-    <!--<string name="hello_blank_fragment">Hello blank fragment</string>-->
-    <!--<string name="search_hint">Search Recipes or Categories</string>-->
-    <!--<string name="title_activity_transition_test">TransitionTest</string>-->
-    <!--<string name="action_settings">Settings</string>-->
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="search_hint">Search Recipes or Categories</string>
+    <string name="title_activity_transition_test">TransitionTest</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_list_recipes">ListRecipesActivity</string>
 </resources>

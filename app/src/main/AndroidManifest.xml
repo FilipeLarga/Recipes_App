@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.IngredientFilterActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ui.ListRecipesActivity"
+            android:label="@string/title_activity_list_recipes"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".ui.HomeActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.Launcher">
@@ -40,7 +48,7 @@
         <activity
             android:name=".TransitionTest"
             android:label="@string/title_activity_transition_test"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

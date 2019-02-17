@@ -7,7 +7,7 @@
         <item name="colorPrimary">@color/colorPrimaryExtraDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
         <item name="colorAccent">@color/colorSecondary</item>
-        <item name="android:colorBackground">@color/colorSecondaryBackground</item>
+        <item name="android:colorBackground">@color/colorSecondaryExtraLight</item>
         <item name="android:statusBarColor">@color/colorPrimaryExtraDark</item>
     </style>
 
@@ -19,12 +19,12 @@
 
     <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
         <!--Status Bar -->
-        <item name="android:statusBarColor">@color/colorSecondaryBackground</item>
+        <item name="android:statusBarColor">@color/colorSecondaryLight</item>
         <item name="android:windowLightStatusBar">true</item>
 
         <item name="android:windowActivityTransitions">true</item>
         <item name="colorPrimary">@color/colorPrimaryExtraDark</item>
-        <item name="android:colorBackground">@color/colorSecondaryBackground</item>
+        <item name="android:colorBackground">@color/colorSecondaryExtraLight</item>
         <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
         <item name="android:textColorSecondary">@color/colorPrimaryExtraDark</item>
         <item name="colorAccent">@color/colorSecondary</item>
