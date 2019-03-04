@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents">  <!-- Theme.AppCompat.Light.DarkActionBar" -->
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowActivityTransitions">true</item>
         <item name="android:windowContentTransitions">true</item>
@@ -17,7 +17,7 @@
         <item name="android:windowBackground">@drawable/launch_screen</item>
     </style>
 
-    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!--Status Bar -->
         <item name="android:statusBarColor">@color/colorSecondaryLight</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -28,6 +28,8 @@
         <item name="colorPrimaryDark">@color/colorPrimaryExtraDark</item>
         <item name="android:textColorSecondary">@color/colorPrimaryExtraDark</item>
         <item name="colorAccent">@color/colorSecondary</item>
+
+
     </style>
 
     <style name="AppTheme.Toolbar" parent="AppTheme">
@@ -48,5 +50,11 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ChipTextStyle">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:fontFamily">@font/lenkton_bold</item>
+    </style>
 
 </resources>
